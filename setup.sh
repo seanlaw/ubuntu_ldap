@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ $(id -u) != "0" ]; then
+    echo "Please execute this script with sudo privileges"
+fi
+
 DIR=`pwd`
 
 # Gather LDAP Server Information
