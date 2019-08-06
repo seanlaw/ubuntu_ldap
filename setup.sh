@@ -1,0 +1,33 @@
+#!/bin/sh
+
+DIR=`pwd`
+
+# Gather LDAP Server Information
+echo "Please provide an LDAP server to Connect to:"
+read LDAP_SERVER
+echo "Please provide an LDAP service account name:"
+read LDAP_USR
+read -s -p "Please provide the LDAP service account password:" LDAP_PWD
+echo
+
+# Install Linux Environment
+sudo apt-get install -y vim fail2ban ssh
+echo 'alias vi="vim"' >> ~/.bashrc
+echo 'alias rm="rm -i"' >> ~/.bashrc
+
+# Install Miniconda
+wget --no-check-certificate https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash ./Miniconda3-latest-Linux-x86_64.sh -b -p $HOME/miniconda3
+conda config --set ssl_verify no
+
+# Create pam.sh Script
+cat > $DIR/pam.sh << EOF
+#!/bin/sh
+
+read PAM_PWD
+$HOME/miniconda3/bin/python $HOME/pam.py $LDAP_USR $LDAP_PWD $LDAP_SERVER $PAM_USER $PAM_PWD >> /tmp/log 2>&1
+EOF
+
+#LDAP Authentication
+conda install -y ldap3
+sudo echo -e "auth sufficient expose_authtok pam_exec.so $DIR/pam.sh\n\n$(cat /etc/pam.d/sshd)" > /etc/pam.d/sshd
