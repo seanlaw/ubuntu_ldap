@@ -2,8 +2,8 @@
 
 [Download Ubuntu 18.04](http://releases.ubuntu.com/18.04/)
 
-1. Attach all peripheral devices directly to the server and not through the KVM switch
-3. Turn on the machine
+1. Attach all peripheral devices directly to the server and not through the KVM switch. Also, ensure that you are connected to the internet is possible.
+2. Turn on the machine
 3. Turn on the machine (seriously)
 4. Wait for the server start screen to appear and get to the startup/boot menu
 5. Select `Boot Menu`
