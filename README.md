@@ -36,4 +36,5 @@ This will add a user, setup their home directory, and initialize their bash envi
 `sudo userdel <username>`
 `sudo rm -rf /home/<username>`
 
-# Setup NVIDIA Graphics Cards
+# Setup NVIDIA 1080Ti Graphics Card
+`sudo apt-get install nvidia-390 nvidia-settings`
