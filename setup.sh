@@ -33,6 +33,7 @@ fi
 cat > $DIR/pam.sh << EOF
 #!/bin/sh
 
+touch /tmp/log
 read PAM_PWD
 $HOME/miniconda3/bin/python $DIR/pam.py $LDAP_USR $LDAP_PWD $LDAP_SERVER $PAM_USER $PAM_PWD >> /tmp/log 2>&1
 EOF
