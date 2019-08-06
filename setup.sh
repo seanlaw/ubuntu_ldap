@@ -16,7 +16,7 @@ read -s -p "Please provide the LDAP service account password:" LDAP_PWD
 echo
 
 # Install Linux Environment
-sudo apt-get install -y vim fail2ban ssh
+sudo apt-get install -y vim ssh
 echo 'alias vi="vim"' >> ~/.bashrc
 echo 'alias rm="rm -i"' >> ~/.bashrc
 
