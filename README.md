@@ -23,7 +23,7 @@
 
 `sudo ./setup.sh`
 
-This script will prompt you for your LDAP server and credentials that will allow you to connect to it. Additionally, it will install all of the necessary software and setup PAM (pluggable authentication modules) for SSH and authenticate users using LDAP if they already have a home directory on the server. If the user does not already have a home directory then they will not be able to authenticate (see Add Users below). Note that if LDAP authentication fails then PAM will conitnue and with its regularly scheduled authentication process.
+This script will prompt you for your LDAP server name and credentials that will allow you to connect and verify AD credentials. Additionally, it will install all of the necessary software and setup PAM (pluggable authentication modules) for SSH. Users will first authenticate (behind the scenes) against LDAP if they already have a home directory on the server. If the user does not already have a home directory then they will not be able to authenticate (see Add Users below). Note that when LDAP authentication fails then PAM will continue along with its regularly scheduled authentication process.
 
 # Add Users 
 
