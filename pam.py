@@ -43,7 +43,7 @@ if __name__ == '__main__':
 
     if len(args.pwd) == 1:
         # This happens when the user is invalid for ssh
-        print(f'Unrecognized user "{args.prodam}" on this server')
+        print(f'Unrecognized user "{args.usr}" on this server')
         print(f'Please create new user "sudo useradd -m {args.usr}" -s /bin/bash')
         exit(1)
     else:
