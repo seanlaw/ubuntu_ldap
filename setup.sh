@@ -8,9 +8,9 @@ fi
 DIR=`pwd`
 
 # Gather LDAP Server Information
-echo "Please provide an LDAP server to Connect to:"
+echo "Please provide an LDAP server to Connect to (e.g., ldap://ldap.example.com):"
 read LDAP_SERVER
-echo "Please provide an LDAP service account name:"
+echo "Please provide an LDAP service account name (e.g., zServiceAccount\@example.com):"
 read LDAP_USR
 read -s -p "Please provide the LDAP service account password:" LDAP_PWD
 echo
