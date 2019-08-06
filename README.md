@@ -17,6 +17,10 @@
 15. On the `Who are you?` screen, choose your username and password and hit `Continue`
 16. Installation should commence and complete. Hit `Restart Now`
 
+# Setting Things Up
+
+`sudo ./setup.sh`
+
 # Add Users 
 
 This will add a user, setup their home directory, and initialize their bash environment
