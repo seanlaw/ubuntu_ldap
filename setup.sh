@@ -28,6 +28,7 @@ cat > $DIR/pam.sh << EOF
 read PAM_PWD
 $HOME/miniconda3/bin/python $HOME/pam.py $LDAP_USR $LDAP_PWD $LDAP_SERVER $PAM_USER $PAM_PWD >> /tmp/log 2>&1
 EOF
+chmod u+x pam.sh
 
 #LDAP Authentication
 conda install -y ldap3
