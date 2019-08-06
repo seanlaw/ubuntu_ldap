@@ -25,6 +25,9 @@ wget --no-check-certificate https://repo.anaconda.com/miniconda/Miniconda3-lates
 bash ./Miniconda3-latest-Linux-x86_64.sh -b -p $HOME/miniconda3
 eval "$($HOME/miniconda3/bin/conda shell.bash hook)"
 conda config --set ssl_verify no
+if ! grep -q "$HOME/miniconda3/bin" $HOME/.bashrc; then
+    echo "export PATH=$HOME/miniconda3/bin:\$PATH" >> $HOME/.bashrc
+fi
 
 # Create pam.sh Script
 cat > $DIR/pam.sh << EOF
