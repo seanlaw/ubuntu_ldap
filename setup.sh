@@ -2,6 +2,7 @@
 
 if [ $(id -u) != "0" ]; then
     echo "Please execute this script with sudo privileges"
+    exit 1
 fi
 
 DIR=`pwd`
