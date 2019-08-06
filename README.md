@@ -38,3 +38,4 @@ This will add a user, setup their home directory, and initialize their bash envi
 
 # Setup NVIDIA 1080Ti Graphics Card
 `sudo apt-get install nvidia-390 nvidia-settings`
+`conda install -c nvidia -c rapidsai -c numba -c conda-forge -c pytorch -c defaults cudf=0.8 cuml=0.8 cugraph=0.8 python=3.7 cudatoolkit=10.0`
