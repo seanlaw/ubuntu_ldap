@@ -47,4 +47,10 @@ As of Aug-07-2019, the latest driver was nvidia-driver-430 and a [CUDA compatibi
 
 `sudo apt-get install nvidia-driver-430 nvidia-settings`
 
+Install nvcc
+
+`sudo apt-get install -y nvidia-cuda-toolkit`
+
+Install RAPIDS suite
+
 `conda install -c nvidia -c rapidsai -c numba -c conda-forge -c pytorch -c defaults cudf=0.8 cuml=0.8 cugraph=0.8 python=3.7 cudatoolkit=10.0`
