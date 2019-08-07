@@ -44,3 +44,5 @@ chmod u+x pam.sh
 #LDAP Authentication
 conda install -y ldap3
 sudo echo -e "auth sufficient pam_exec.so expose_authtok $DIR/pam.sh\n\n$(cat /etc/pam.d/sshd)" > /etc/pam.d/sshd
+
+echo "Please reboot now"

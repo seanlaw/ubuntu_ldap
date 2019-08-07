@@ -40,9 +40,11 @@ This will add a user, setup their home directory, and initialize their bash envi
 # Setup NVIDIA 1080Ti Graphics Card
 
 Available drivers are listed under:
+
 `ubuntu-drivers devices`
 
 As of Aug-07-2019, the latest driver was nvidia-driver-430 and a [CUDA compatibility table can be found here](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html)
+
 `sudo apt-get install nvidia-driver-430 nvidia-settings`
 
 `conda install -c nvidia -c rapidsai -c numba -c conda-forge -c pytorch -c defaults cudf=0.8 cuml=0.8 cugraph=0.8 python=3.7 cudatoolkit=10.0`
