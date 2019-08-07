@@ -38,9 +38,6 @@ This will add a user, setup their home directory, and initialize their bash envi
 `sudo rm -rf /home/<username>`
 
 # Setup NVIDIA 1080Ti Graphics Card
-`sudo sed -i 's/quiet splash/quiet splash pci=nomsi/' /etc/default/grub`
-
-`sudo update-grub`
 
 Available drivers are listed under:
 `ubuntu-drivers devices`
