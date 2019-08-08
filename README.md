@@ -49,7 +49,7 @@ As of Aug-07-2019, the latest driver was nvidia-driver-430 and a [CUDA compatibi
 
 Install nvcc
 
-`sudo apt-get install -y nvidia-cuda-toolkit`
+`conda install -c nvidia nvcc_linux-64`
 
 Install RAPIDS suite
 
