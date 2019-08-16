@@ -23,6 +23,7 @@ class LDAP(object):
         """
 
         self.cnxn = ldap3.Connection(self.server, self.user, self.password)
+        self.cnxn.start_tls()
 
         try:
             self.cnxn.bind()
