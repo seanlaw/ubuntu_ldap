@@ -54,3 +54,9 @@ Install nvcc
 Install RAPIDS suite
 
 `conda install -c nvidia -c rapidsai -c numba -c conda-forge -c pytorch -c defaults cudf=0.8 cuml=0.8 cugraph=0.8 python=3.7 cudatoolkit=10.0`
+
+If you encounter any error messages that complain about, say, `libcublas.so` not being found that you may need to add the following environment variable to your `.bashrc`:
+
+`export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64/`
+
+The CUDA libraries are added by root to each `/usr/local/cuda` but, as a standard user, you'll need to explicitly define where the libraries can be found
