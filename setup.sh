@@ -20,6 +20,7 @@ sudo apt-get update
 sudo apt-get install -y vim ssh
 echo 'alias vi="vim"' >> ~/.bashrc
 echo 'alias rm="rm -i"' >> ~/.bashrc
+sudo sed -i 's/\[NOTFOUND\=return\] //' /etc/nsswitch.conf
 sudo sed -i 's/quiet splash/quiet splash pci=nomsi/' /etc/default/grub
 sudo update-grub
 
