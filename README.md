@@ -47,6 +47,10 @@ As of Aug-07-2019, the latest driver was nvidia-driver-430 and a [CUDA compatibi
 
 `sudo apt-get install nvidia-driver-430 nvidia-settings`
 
+Install Miniconda
+
+`wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh`
+
 Install nvcc
 
 `conda install -c nvidia nvcc_linux-64`

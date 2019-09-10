@@ -10,6 +10,7 @@ DIR=`pwd`
 # Gather LDAP Server Information
 echo "Please provide an LDAP server (omit the port number) to Connect to (e.g., ldap://ldap.example.com):"
 read LDAP_SERVER
+LDAP_SERVER=$(echo $LDAP_SERVER | sed 's/:/ /g' | awk '{print $1}')
 echo "Please provide an LDAP service account name (e.g., zServiceAccount@example.com):"
 read LDAP_USR
 read -s -p "Please provide the LDAP service account password:" LDAP_PWD
