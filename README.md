@@ -51,9 +51,9 @@ Install Miniconda
 
 `wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh`
 
-Install nvcc
+Install nvcc and nvprof
 
-`conda install -c nvidia nvcc_linux-64`
+`conda install -c conda-forge cudatoolkit-dev` 
 
 Install RAPIDS suite
 
