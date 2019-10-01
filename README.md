@@ -64,3 +64,7 @@ If you encounter any error messages that complain about, say, `libcublas.so` not
 `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64/`
 
 The CUDA libraries are added by root to each `/usr/local/cuda` but, as a standard user, you'll need to explicitly define where the libraries can be found
+
+# Mounting the HDD
+
+[Follow these steps](https://medium.com/@sh.tsang/partitioning-formatting-and-mounting-a-hard-drive-in-linux-ubuntu-18-04-324b7634d1e0) to mount the HDD from /dev/sda
