@@ -43,9 +43,9 @@ Available drivers are listed under:
 
 `ubuntu-drivers devices`
 
-As of Aug-07-2019, the latest driver was nvidia-driver-430 and a [CUDA compatibility table can be found here](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html)
+As of Jul-09-2021, the latest (stable) driver was nvidia-driver-460 and a [CUDA compatibility table can be found here](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html)
 
-`sudo apt-get install nvidia-driver-430 nvidia-settings`
+`sudo apt-get install nvidia-driver-465 nvidia-settings`
 
 Install Miniconda
 
@@ -64,6 +64,26 @@ If you encounter any error messages that complain about, say, `libcublas.so` not
 `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64/`
 
 The CUDA libraries are added by root to each `/usr/local/cuda` but, as a standard user, you'll need to explicitly define where the libraries can be found
+
+# Installing Updates
+
+First, you'll want to download and install any security updates:
+
+`sudo apt update`
+
+`sudo apt upgrade`
+
+Next, you can retrieve a list of the latest Nvidia drivers with:
+
+`apt search nvidia-driver | grep nvidia-driver`
+
+And install the latest one:
+
+`sudo apt install nvidia-driver-460`
+
+Finally, clean up unnecessary packages with:
+
+`sudo apt autoremove`
 
 # Mounting the HDD
 
