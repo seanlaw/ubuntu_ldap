@@ -55,6 +55,12 @@ Install nvcc and nvprof
 
 `conda install -c conda-forge cudatoolkit-dev` 
 
+Note that you may need to reboot the server in order to resolve any CUDA driver/library version mismatches. If you are able to execute:
+
+`nvidia-smi`
+
+Then, you should be good to go. Otherwise, try rebooting the server (requires sudo).
+
 Install RAPIDS suite
 
 `conda install -c nvidia -c rapidsai -c numba -c conda-forge -c pytorch -c defaults cudf=0.8 cuml=0.8 cugraph=0.8 python=3.7 cudatoolkit=10.0`
