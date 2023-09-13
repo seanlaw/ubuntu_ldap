@@ -7,12 +7,13 @@ import logging
 logger = logging.getLogger(__name__)
 
 class LDAP(object):
-    def __init__(self, usr, pwd, server, port=389):
+    def __init__(self, usr, pwd, server, port=636):
         """
         """
-        self.user = usr
+        domain = '.'.join(server.split('.')[-2:])
+        self.user = usr + f'@{domain}'
         self.password = pwd
-        self.server = ldap3.Server(f'{server}:{port}')
+        self.server = ldap3.Server(f'{server}:{port}', use_ssl=True)
         self.cnxn = None
         self.generator = None
 
@@ -35,11 +36,10 @@ class LDAP(object):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('ldap_usr')
-    parser.add_argument('ldap_pwd')
-    parser.add_argument('ldap_server')
     parser.add_argument('usr')
     parser.add_argument('pwd')
+    parser.add_argument('ldap_server')
+    parser.add_argument('ldap_port')
     args = parser.parse_args()
 
     if len(args.pwd) == 1:
@@ -50,15 +50,11 @@ if __name__ == '__main__':
     else:
         print(f'Username "{args.usr}" is a recognized user on this server')
 
-    ldap = LDAP(args.ldap_usr, args.ldap_pwd, args.ldap_server)
+    ldap = LDAP(args.usr, args.pwd, args.ldap_server, args.ldap_port)
 
     if ldap.connect():
-        print("Connection to LDAP Succeeded")
-        if ldap3.Connection(ldap.server, f'prod-am\{args.usr}', args.pwd).bind():
-            print(f'Good LDAP Credentials for "{args.usr}"')
-            exit(0)
-        else:
-            print(f'Bad LDAP Credentials for "{args.usr}"')
+        print(f'Good LDAP Credentials for "{args.usr}"')
+        exit(0)
     else:
         print("Connection to LDAP Failed")
 

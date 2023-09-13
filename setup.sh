@@ -11,10 +11,12 @@ DIR=`pwd`
 echo "Please provide an LDAP server (omit the port number) to Connect to (e.g., ldap://ldap.example.com):"
 read LDAP_SERVER
 LDAP_SERVER=$(echo $LDAP_SERVER | sed 's/:/ /g' | awk '{print $1}')
-echo "Please provide an LDAP service account name (e.g., zServiceAccount@example.com):"
-read LDAP_USR
-read -s -p "Please provide the LDAP service account password:" LDAP_PWD
-echo
+echo "Please provide an LDAP port number:"
+read LDAP_PORT
+# echo "Please provide an LDAP service account name (e.g., zServiceAccount@example.com):"
+# read LDAP_USR
+# read -s -p "Please provide the LDAP service account password:" LDAP_PWD
+# echo
 
 # Install Linux Environment
 sudo apt-get update
@@ -40,7 +42,8 @@ cat > $DIR/pam.sh << EOF
 
 touch /tmp/log
 read PAM_PWD
-$HOME/miniconda3/bin/python $DIR/pam.py $LDAP_USR $LDAP_PWD $LDAP_SERVER \$PAM_USER \$PAM_PWD >> /tmp/log 2>&1
+#$HOME/miniconda3/bin/python $DIR/pam.py $LDAP_USR $LDAP_PWD $LDAP_SERVER \$PAM_USER \$PAM_PWD >> /tmp/log 2>&1
+$HOME/miniconda3/bin/python $DIR/pam.py \$PAM_USER \$PAM_PWD $LDAP_SERVER $LDAP_PORT >> /tmp/log 2>&1
 EOF
 chmod u+x pam.sh
 
